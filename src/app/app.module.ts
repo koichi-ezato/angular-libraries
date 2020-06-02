@@ -20,7 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import {JpPostService} from 'jp-post';
+import {JpPostService} from '../../projects/jp-post/src/src/lib/jp-post.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatDividerModule} from '@angular/material/divider';
 

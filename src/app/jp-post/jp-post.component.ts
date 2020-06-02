@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {JpPostService} from 'jp-post';
+import {JpPostService} from '../../../projects/jp-post/src/src/lib/jp-post.service';
 
 @Component({
   selector: 'app-jp-post',
