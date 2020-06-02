@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>住所検索</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="jpPostForm" [name]="jpPostForm">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="郵便番号" [formControl]="postalCodeControl" required>
+        <mat-error *ngIf="postalCodeControl.hasError('required')">郵便番号は必ず入力してください。</mat-error>
+        <mat-error *ngIf="postalCodeControl.hasError('pattern')">郵便番号は'123-4567'もしくは'1234567'の形式で入力してください。</mat-error>
+      </mat-form-field>
+      <mat-divider [vertical]="true"></mat-divider>
+      <mat-form-field>
+        <input matInput placeholder="都道府県" [formControl]="prefControl" maxlength="100">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="市区町村" [formControl]="addressControl" maxlength="100">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="市区" [formControl]="cityControl" maxlength="100">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="町村" [formControl]="townControl" maxlength="100">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="住所" [formControl]="fullAddressControl" maxlength="100">
+      </mat-form-field>
+      <p>{{err}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onClickGetAddress()" [disabled]="jpPostForm.invalid"><mat-icon>place</mat-icon> 住所検索</button>
+      <button mat-button color="warn" (click)="onClickClear()"><mat-icon>cancel</mat-icon> クリア</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

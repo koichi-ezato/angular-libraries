@@ -27,7 +27,7 @@ export class JpPostService {
 }
 
 export interface ZipSearch {
-  code: string;
+  code: number;
   data: {
     pref: string,
     address: string,
@@ -35,4 +35,5 @@ export interface ZipSearch {
     town: string,
     fullAddress: string,
   };
+  message?: string;
 }
