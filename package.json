@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng deploy --base-href=/angular-libraries/ --message='[skip ci] deploy to GitHub Pages'"
+    "deploy": "ng build --prod --base-href=/angular-libraries/ --message='[skip ci] deploy to GitHub Pages'"
   },
   "private": true,
   "dependencies": {
