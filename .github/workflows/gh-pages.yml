@@ -33,3 +33,9 @@ jobs:
           CI: true
           GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
           GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
