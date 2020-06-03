@@ -5,37 +5,19 @@ on:
     branches:
       - master
   pull_request:
-    branches:
-      - master
-
+    branches: [ master ]
 jobs:
-  build-and-deploy:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - name: All things angular
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions
         with:
-          node-version: 13.x
-
-      - name: cache
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles(format('{0}{1}', github.workspace, '/package.json')) }}
-
-      - name: build and deploy
-        run: |
-          npm install
-          npm run deploy
-        env:
-          CI: true
-          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-          GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/angular-libraries
+          github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
+          build_configuration: staging # The build environment for the app. please look configurations in your angular.json
+          base_href: /angular-libraries/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+          deploy_branch: gh-pages # The branch the action should deploy to.
+          build_folder: dist/angular-libraries # The folder where your project is supposed to be after running ng build by the action.
