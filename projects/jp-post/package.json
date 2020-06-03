@@ -1,10 +1,16 @@
 {
   "name": "jp-post",
+  "description": "Search for addresses in Japan by zip code.",
   "version": "0.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/koichi-ezato/angular-libraries/tree/master/projects/jp-post"
+  },
+  "author": {
+    "name": "Koichi Ezato",
+    "email": "koichi.e.38@gmail.com",
+    "url": "https://coedlab.website"
   },
   "peerDependencies": {
     "@angular/common": "^9.1.9",
@@ -12,5 +18,6 @@
   },
   "dependencies": {
     "tslib": "^1.10.0"
-  }
+  },
+  "keywords": ["service", "jp-post"]
 }

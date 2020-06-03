@@ -2,23 +2,47 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
-## Code scaffolding
+## install
 
-Run `ng generate component component-name --project jp-post` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project jp-post`.
-> Note: Don't forget to add `--project jp-post` or else it will be added to the default project in your `angular.json` file. 
+```shell script
+npm i jp-post
+```
 
-## Build
+## example
+example.component.ts
+```typescript
+    this.jpPostService.get(postalCode)
+      .then(response => {
+        if (response.code === 200) {
+        } else {
+        }
+      })
+      .catch(err => {
+        this.err = err;
+        console.log(err);
+      });
+```
 
-Run `ng build jp-post` to build the project. The build artifacts will be stored in the `dist/` directory.
+## reference
+**inputs**
+* postalCode: Japan zip code.
 
-## Publishing
+**output**
+* response: ZipSearch model.
 
-After building your library with `ng build jp-post`, go to the dist folder `cd dist/jp-post` and run `npm publish`.
+```typescript
+export interface ZipSearch {
+  code: number;
+  data: {
+    pref: string,
+    address: string,
+    city: string,
+    town: string,
+    fullAddress: string,
+  };
+  message?: string;
+}
+```
 
-## Running unit tests
-
-Run `ng test jp-post` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+If success then return code is ```200``` and set value data,
+else error return code other ```200``` and set value message.
