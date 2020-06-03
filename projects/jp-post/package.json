@@ -1,7 +1,7 @@
 {
   "name": "jp-post",
   "description": "Search for addresses in Japan by zip code.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "dependencies": {
     "tslib": "^1.10.0"
   },
-  "keywords": ["service", "jp-post"]
+  "keywords": [
+    "service",
+    "jp-post"
+  ]
 }
