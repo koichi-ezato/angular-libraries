@@ -2,6 +2,8 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
+[demo](https://koichi-ezato.github.io/angular-libraries/#/jp-post)
+
 ## install
 
 ```shell script

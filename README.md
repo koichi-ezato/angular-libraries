@@ -1,6 +1,6 @@
 # AngularLibraries
 
-List of developed libraries
+List of developed angular libraries
 
 ## Libraries
 
