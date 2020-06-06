@@ -1,7 +1,7 @@
 {
   "name": "jp-post",
   "description": "Search for addresses in Japan by zip code.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "repository": {
     "type": "git",
