@@ -19,6 +19,10 @@
       "jp-post": [
         "dist/jp-post/jp-post",
         "dist/jp-post"
+      ],
+      "jp-bank": [
+        "dist/jp-bank/jp-bank",
+        "dist/jp-bank"
       ]
     }
   },

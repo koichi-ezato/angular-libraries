@@ -170,6 +170,46 @@
           }
         }
       }
+    },
+    "jp-bank": {
+      "projectType": "library",
+      "root": "projects/jp-bank",
+      "sourceRoot": "projects/jp-bank/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/jp-bank/tsconfig.lib.json",
+            "project": "projects/jp-bank/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/jp-bank/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/jp-bank/src/test.ts",
+            "tsConfig": "projects/jp-bank/tsconfig.spec.json",
+            "karmaConfig": "projects/jp-bank/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/jp-bank/tsconfig.lib.json",
+              "projects/jp-bank/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-libraries"

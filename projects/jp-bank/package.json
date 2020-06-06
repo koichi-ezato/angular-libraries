@@ -1,0 +1,26 @@
+{
+  "name": "jp-bank",
+  "description": "Search for Bank Information in Japan by bank code and branch code.",
+  "version": "0.0.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koichi-ezato/angular-libraries/tree/master/projects/jp-bank"
+  },
+  "author": {
+    "name": "Koicih Ezato",
+    "email": "koichi.e.38@gmail.com",
+    "url": "https://coedlab.website"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.1.9",
+    "@angular/core": "^9.1.9"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
+  "keywords": [
+    "service",
+    "jp-bank"
+  ]
+}

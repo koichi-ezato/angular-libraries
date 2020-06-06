@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>銀行検索</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="bankForm" [name]="bankForm">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="銀行コード" [formControl]="bankCodeControl1" required>
+        <mat-error *ngIf="bankCodeControl1.hasError('required')">銀行コードは必ず入力してください。</mat-error>
+        <mat-error *ngIf="bankCodeControl1.hasError('pattern')">銀行コードは4桁の数値を入力してください。</mat-error>
+      </mat-form-field>
+      <mat-divider [vertical]="true"></mat-divider>
+      <mat-form-field>
+        <input matInput placeholder="銀行名" [formControl]="bankNameControl">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="銀行名カナ" [formControl]="bankKanaControl">
+      </mat-form-field>
+      <p *ngIf="bankErr">{{bankErr.message}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onClickGetBankInfo()" [disabled]="bankForm.invalid"><mat-icon>account_balance</mat-icon> 銀行検索</button>
+      <button mat-button color="warn" (click)="onClickClearBankInfo()"><mat-icon>cancel</mat-icon> クリア</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>銀行支店検索</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="bankBranchForm" [name]="bankBranchForm">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="銀行コード" [formControl]="bankCodeControl2" required>
+        <mat-error *ngIf="bankCodeControl2.hasError('required')">銀行コードは必ず入力してください。</mat-error>
+        <mat-error *ngIf="bankCodeControl2.hasError('pattern')">銀行コードは4桁の数値を入力してください。</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="銀行支店コード" [formControl]="bankBranchCodeControl" required>
+        <mat-error *ngIf="bankBranchCodeControl.hasError('required')">銀行支店コードは必ず入力してください。</mat-error>
+        <mat-error *ngIf="bankBranchCodeControl.hasError('pattern')">銀行支店コードは4桁の数値を入力してください。</mat-error>
+      </mat-form-field>
+      <mat-divider [vertical]="true"></mat-divider>
+      <mat-form-field>
+        <input matInput placeholder="銀行支店名" [formControl]="bankBranchNameControl">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="銀行支店名カナ" [formControl]="bankBranchKanaControl">
+      </mat-form-field>
+      <p *ngIf="bankBranchErr">{{bankBranchErr.message}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onClickGetBankBranchInfo()" [disabled]="bankBranchForm.invalid"><mat-icon>account_balance</mat-icon> 銀行支店検索</button>
+      <button mat-button color="warn" (click)="onClickClearBankBranchInfo()"><mat-icon>cancel</mat-icon> クリア</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

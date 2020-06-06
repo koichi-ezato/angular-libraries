@@ -23,6 +23,7 @@ import {MatInputModule} from '@angular/material/input';
 import {JpPostService} from '../../projects/jp-post/src/src/lib/jp-post.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatDividerModule} from '@angular/material/divider';
+import { JpBankComponent } from './jp-bank/jp-bank.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatDividerModule} from '@angular/material/divider';
     PageHeaderComponent,
     FooterComponent,
     MenuComponent,
-    NavbarComponent
+    NavbarComponent,
+    JpBankComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
